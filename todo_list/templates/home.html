@@ -5,5 +5,15 @@ ToDo List
 {% endblock %}
 
 {% block content %}
-<h1>Hello World HomePage</h1>
+
+{% if all_items %}
+<ul>
+    {% for stuff in all_items %}
+
+    <li>{{stuff.item}}</li>
+
+    {% endfor %}
+</ul>
+{% endif %}
+
 {% endblock %}

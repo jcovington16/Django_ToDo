@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 
-# Create your views here.
+from .models import List
 
 
 def home(request):
-    return render(request, 'home.html', {})
+    all_items = List.objects.all()
+    return render(request, 'home.html', {'all_items': all_items})
 
 
 def about(request):
